@@ -1,5 +1,5 @@
 O(n^2) Time - if the board wasnt fixed (9x9), but in the exercise its fixed so time will be O(1)
-O(n) Space
+O(n) Space - can also be O(1) because its going until 9 for every Set list
 
 class Solution {
     public boolean isValidSudoku(char[][] board) {
