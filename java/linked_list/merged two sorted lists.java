@@ -28,7 +28,7 @@ class Solution {
 }
 
 O(N + M) - Time
-O(N + M) - Space -> due to recursive stack space
+O(N + M) - Space -> due to recursive calls
 
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
