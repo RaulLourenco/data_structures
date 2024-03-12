@@ -34,7 +34,7 @@ class Solution {
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
         int left = 1;
-        int right = 1000000000;
+        int right = 1000000000; // constraint 10^9
 
         while(left <= right) {
             int k = left + (right - left)/2;
