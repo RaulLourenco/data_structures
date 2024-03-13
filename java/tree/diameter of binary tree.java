@@ -27,9 +27,9 @@ class Solution {
     private int dfs(TreeNode curr) {
         if(curr == null) return -1;
 
-        int left = 1 + dfs(curr.left);
-        int right = 1 + dfs(curr.right);
-        result = Math.max(result, left + right);
-        return Math.max(left, right);
+        int left = 1 + dfs(curr.left); //left height
+        int right = 1 + dfs(curr.right); // right height
+        result = Math.max(result, left + right); //diameter
+        return Math.max(left, right); //height of each step
     }
 }
