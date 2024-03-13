@@ -30,6 +30,6 @@ class Solution {
         int left = 1 + dfs(curr.left); //left height
         int right = 1 + dfs(curr.right); // right height
         result = Math.max(result, left + right); //diameter
-        return Math.max(left, right); //height of each step
+        return Math.max(left, right); //max height between left and right
     }
 }
