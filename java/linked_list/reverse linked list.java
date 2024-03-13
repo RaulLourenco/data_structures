@@ -10,7 +10,7 @@
  */
 
 O(n) Time
-O(1) Space
+O(n) Space - due to recursive calls
 
 class Solution {
     public ListNode reverseList(ListNode head) {
@@ -26,8 +26,8 @@ class Solution {
     }
 }
 
-O(n) Time
-O(n) Space - due to recursive calls
+O(n) Time - Iterative
+O(1) Space
 
 class Solution {
     public ListNode reverseList(ListNode head) {
