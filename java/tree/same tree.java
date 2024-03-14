@@ -15,7 +15,7 @@ class Solution {
 }
 
 O(P + Q) Time
-O(1) Space
+O(h) Space
 
 class Solution {
     Stack<Integer> stack;
@@ -40,6 +40,26 @@ class Solution {
             stack.push(2);
             return;
         }
+        traversal(p.right, q.right);
+    }
+}
+
+class Solution {
+    Stack<Integer> stack;
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        stack = new Stack<>();
+        traversal(p, q);
+        return stack.isEmpty();
+    }
+    private void traversal(TreeNode p, TreeNode q) {
+        if(p == null && q == null) {
+            return;
+        }
+        if(p == null || q == null || p.val != q.val) {
+            stack.push(1);
+            return;
+        }
+        traversal(p.left, q.left);
         traversal(p.right, q.right);
     }
 }
