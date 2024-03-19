@@ -51,19 +51,18 @@ class Twitter {
         users.get(userId).post(tweetId);
     }
     
-    //O(k log m) - where k is the number of followers of the user and
-    //m is the average number of tweets per follower. O(log m) is due to
-    //the insertion operation in PriorityQueue (heap).
+    //O(n log k) - where k is the number of users followed by the given user
+    //and n is the total number of tweets in the heap.
     public List<Integer> getNewsFeed(int userId) {
         List<Integer> result = new LinkedList<>();
 
         if(!users.containsKey(userId)) return result;
 
-        Set<Integer> followers = users.get(userId).followed;
-        PriorityQueue<Tweet> heap = new PriorityQueue<>(followers.size(), (a,b) -> (b.time-a.time));
+        Set<Integer> usersFollowed = users.get(userId).followed;
+        PriorityQueue<Tweet> heap = new PriorityQueue<>(usersFollowed.size(), (a,b) -> (b.time-a.time));
 
-        for(int follower : followers) {
-            Tweet tweet = users.get(follower).tweetHead;
+        for(int followed : usersFollowed) {
+            Tweet tweet = users.get(followed).tweetHead;
             if(tweet != null) {
                 heap.add(tweet);
             }
