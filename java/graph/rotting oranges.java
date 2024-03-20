@@ -32,8 +32,8 @@ class Solution {
     }
 
     private void dfs(int[][] grid, int row, int col, int minutes) {
-        if(row < 0 || col < 0 //out of bonds
-        || row >= grid.length || col >= grid[0].length //out of bonds
+        if(row < 0 || col < 0 //out of bounds
+        || row >= grid.length || col >= grid[0].length //out of bounds
         || grid[row][col] == 0 //empty cell
         || grid[row][col] > 1 && grid[row][col] < minutes) return; //already rotten
 
