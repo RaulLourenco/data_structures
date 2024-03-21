@@ -32,7 +32,7 @@ class Solution {
 }
 
 //O(n^2) Time - O(1) Space - where n is the size of string s
-//Expanding around center
+//Expand around center
 class Solution {
     public String longestPalindrome(String s) {
         int n = s.length();

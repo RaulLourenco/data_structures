@@ -1,5 +1,5 @@
 //O(n^2) Time - O(1) Space - where n is the size of string s
-//Expanding around center
+//Expand around center
 class Solution {
     int count = 0;
     public int countSubstrings(String s) {
