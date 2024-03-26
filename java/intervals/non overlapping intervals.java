@@ -1,4 +1,4 @@
-//O(n logn) Time - O(n) Space Complexity - where n is the number of intervals
+//O(n logn) Time - O(1) Space Complexity - where n is the number of intervals
 class Solution {
     public int eraseOverlapIntervals(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
