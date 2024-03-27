@@ -45,3 +45,18 @@ class Solution {
         return Math.max(sold, rest);
     }
 }
+
+//Instead of using Integer.MIN_VALUE, just calculate the buy operation for
+//the first day [0 - prices[0] -> currProfit - priceAtFirstDay]
+class Solution {
+    public int maxProfit(int[] prices) {
+        int sold = 0, hold = 0 - prices[0], rest = 0;
+
+        for(int i = 0; i < prices.length; i++) {
+            hold = Math.max(hold, rest - prices[i]);
+            rest = Math.max(rest, sold);
+            sold = hold + prices[i];
+        }
+        return Math.max(sold, rest);
+    }
+}
