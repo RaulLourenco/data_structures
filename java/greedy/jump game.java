@@ -6,7 +6,7 @@ class Solution {
         int reach = 0;
         for(int i = 0; i < n; i++) {
             if(reach < i) return false;
-            //calculate the farest reachable index at each step
+            //calculate the farthest reachable index at each step
             reach = Math.max(reach, i + nums[i]);
         }
         return true;
