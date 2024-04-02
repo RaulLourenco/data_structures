@@ -1,4 +1,5 @@
 //O(Edges * log(Vertices)) - O(E*logV) Time & Space
+//Dijkstra's Algo
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
         Map<Integer, List<int[]>> edges = new HashMap<>();
