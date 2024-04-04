@@ -45,7 +45,7 @@ class Solution {
 
 //O(n*k) Time & O(1) Space (without considering the res)
 //Brute Force that I started to develop (10 min), but I don't want to spend
-//a lot of time on this (19 / 51 testcases passed)
+//a lot of time on this (42 / 51 testcases passed) - Solution resulting in TLE
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
