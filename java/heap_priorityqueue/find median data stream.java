@@ -31,6 +31,39 @@ class MedianFinder {
     }
 }
 
+//Brute Force with Binary Search
+class MedianFinder {
+    List<Integer> list;
+    public MedianFinder() {
+        list = new ArrayList<>();
+    }
+    
+    //O(log(n)) Time
+    public void addNum(int num) {
+        int left = 0;
+        int right = list.size() - 1;
+        while(left <= right) {
+            int mid = left + (right - left) / 2;
+            if(list.get(mid) > num) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        list.add(left, num);
+    }
+    
+    public double findMedian() {
+        int mid = list.size() / 2;
+        if(list.size() % 2 == 0) {
+            return (double) (list.get(mid-1) + list.get(mid)) / 2.0;
+        } else {
+            return (double) list.get(mid);
+        }
+    }
+}
+
 //Brute Force (18 / 21 testcases passed) - Resulting in TLE
 class MedianFinder {
     List<Integer> list;
