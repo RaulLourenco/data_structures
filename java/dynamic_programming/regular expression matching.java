@@ -15,7 +15,8 @@ class Solution {
         
         boolean match = i < s.length() && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.');
         if(j + 1 < p.length() && p.charAt(j + 1) == '*') {
-            dp[i][j] = (match && dfs(s, p, i + 1, j, dp)) || dfs(s, p, i, j + 2, dp);
+            dp[i][j] = (match && dfs(s, p, i + 1, j, dp)) //use the star (*)
+                        || dfs(s, p, i, j + 2, dp); //don't use (*)
         } else {
             dp[i][j] = match && dfs(s, p, i + 1, j + 1, dp);
         }
