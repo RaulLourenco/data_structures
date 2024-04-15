@@ -15,7 +15,7 @@ public int[] bubbleSort(int[] array) {
 }
 
 //O(n^2) Time & O(1) Space - where n is the length of the array
-//Optimized way to stop if didn't happened any swap
+//Optimized way to stop if didn't happen any swap
 public int[] bubbleSort(int[] array) {
     int n = array.length;
     boolean swapped = false;
