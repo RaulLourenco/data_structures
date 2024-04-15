@@ -1,7 +1,6 @@
-Time Complexity = O(N log(N))
-Space Complexity = O(N)
-
-void merge(int arr[], int left, int middle, int right) {
+//O(n log(n)) Time & O(n) Space - where n is the length of the array
+class MergeSort {
+    public void merge(int arr[], int left, int middle, int right) {
     // Find sizes of two subarrays to be merged
     int leftSize = middle - left + 1;
     int rightSize = right - middle;
@@ -48,21 +47,28 @@ void merge(int arr[], int left, int middle, int right) {
         indexRightArray++;
         indexMergedArray++;
     }
-}
  
-// Main function that sorts arr[l..r] using
-// merge()
-void sort(int arr[], int left, int right) {
-    if (left < right) {
+    // Main function that sorts arr[l..r] using
+    // merge()
+    public void sort(int arr[], int left, int right) {
+        if (left < right) {
 
-        // Find the middle point
-        int middle = left + (right - left) / 2;
+            // Find the middle point
+            int middle = left + (right - left) / 2;
 
-        // Sort first and second halves
-        sort(arr, left, middle);
-        sort(arr, middle + 1, right);
+            // Sort first and second halves
+            sort(arr, left, middle);
+            sort(arr, middle + 1, right);
 
-        // Merge the sorted halves
-        merge(arr, left, middle, right);
+            // Merge the sorted halves
+            merge(arr, left, middle, right);
+        }
+    }
+
+    public static void main(String args[]) {
+        int arr[] = { 40, 3, 10, 7, 2, 15, 6 };
+
+        MergeSort ms = new MergeSort();
+        ms.sort(arr, 0, arr.length - 1);
     }
 }
