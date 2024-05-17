@@ -6,8 +6,8 @@ class MergeSort {
     int rightSize = right - middle;
 
     // Create temp arrays
-    int leftArray[] = new int[leftSize];
-    int rightArray[] = new int[rightSize];
+    int[] leftArray = new int[leftSize];
+    int[] rightArray = new int[rightSize];
 
     // Copy data to temp arrays
     for (int i = 0; i < leftSize; ++i)
